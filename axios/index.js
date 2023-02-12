@@ -6,8 +6,8 @@ const apiUrl = `${BASE_API_URL}/list-to-do`;
 
 async function getData() {
   const response = await axios.get(apiUrl);
-  const result = response.data;
-  console.log(result);
+  const resultGet = response.data;
+  console.log(resultGet);
 }
 
 async function postsData() {
@@ -17,8 +17,8 @@ async function postsData() {
   };
 
   const response = await axios.post(apiUrl, data);
-  const result = response.data;
-  console.log(result);
+  const resultPosts = response.data;
+  console.log(resultPosts);
 }
 
 async function patchData() {
@@ -31,14 +31,14 @@ async function patchData() {
     `${apiUrl}/63e7a58a8185f56900e351d4`,
     data
   );
-  const result = response.data;
-  console.log(result);
+  const resultPatch = response.data;
+  console.log(resultPatch);
 }
 
 async function deleteData() {
   const response = await axios.delete(`${apiUrl}/63e741988185f56900e3519a`);
-  const result = response.data;
-  console.log(result);
+  const resultDelete = response.data;
+  console.log(resultDelete);
 }
 
 patchData();

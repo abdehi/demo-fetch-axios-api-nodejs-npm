@@ -2,14 +2,14 @@ const BASE_API_URL = `https://api.kontenbase.com/query/api/v1/3325dcf5-a9b6-4c6c
 
 const apiUrl = `${BASE_API_URL}/list-to-do`;
 
-async function getListToDo() {
+async function getData() {
   const response = await fetch(apiUrl);
-  const listToDo = await response.json();
+  const resultGet = await response.json();
 
-  console.log(listToDo);
+  console.log(resultGet);
 }
 
-async function postsListToDo() {
+async function postsData() {
   const data = {
     title: "ini baru",
     notes: "kedua kali tambah",
@@ -19,22 +19,22 @@ async function postsListToDo() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  const newPost = await response.json();
+  const resultPost = await response.json();
 
-  console.log(newPost);
+  console.log(resultPost);
 }
 
-async function deleteListToDo() {
+async function deleteData() {
   const response = await fetch(`${apiUrl}/63e741668185f56900e35199`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
   });
-  const newPatch = await response.json();
+  const resultDelete = await response.json();
 
-  console.log(newPatch);
+  console.log(resultDelete);
 }
 
-async function putListToDo() {
+async function patchData() {
   const data = {
     title: "ini baru",
     notes: "kedua kali tambah",
@@ -44,9 +44,9 @@ async function putListToDo() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  const newPatch = await response.json();
+  const resultPatch = await response.json();
 
-  console.log(newPatch);
+  console.log(resultPatch);
 }
 
 putListToDo();
